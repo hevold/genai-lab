@@ -77,7 +77,7 @@ st.markdown("""
             __Velkommen til IJs lab for generativ AI__"""
 )
 st.markdown("""
-            Her har du noen verktøy du kan teste og bruke i våre kurs.
+            Her har du noen verktøy du kan teste og bruke i våre kurs. Tjenesten lar deg teste OpenAIs 4o-modell for generativ tekst, bilder og transkribering. Et stort takk til Micke Kring for koden :).
             """)
     
 st.markdown("# ")
