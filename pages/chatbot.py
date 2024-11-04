@@ -24,7 +24,7 @@ styling()
 
 # Check if language is already in session_state, else initialize it with a default value
 if 'language' not in st.session_state:
-    st.session_state['language'] = "Svenska"  # Default language
+    st.session_state['language'] = "Norsk"  # Default language
 
 st.session_state["pwd_on"] = st.secrets.pwd_on
 
@@ -52,7 +52,7 @@ if st.session_state["pwd_on"] == "true":
 
         st.text_input("Lösenord", type="password", on_change=password_entered, key="password")
         if "password_correct" in st.session_state:
-            st.error("😕 Ooops. Fel lösenord.")
+            st.error("😕 Ooops. Feil passord.")
         return False
 
 
@@ -64,16 +64,17 @@ if st.session_state["pwd_on"] == "true":
 
 # Translation
 
-if st.session_state['language'] == "Svenska":
-    chat_prompt = "Du är en hjälpsam AI-assistent. Svara på användarens frågor."
-    chat_clear_chat = "Rensa chat"
-    chat_hello = "Hej! Hur kan jag hjälpa dig?"
-    chat_settings = "Inställningar"
-    chat_choose_llm = "Välj språkmodell"
+if st.session_state['language'] == "Norsk":
+    chat_prompt = "Du er en hjelpsom AI-assistent. Svar på brukerens spørsmål."
+    chat_clear_chat = "Tøm chat"
+    chat_hello = "Hei! Hvordan kan jeg hjelpe deg?"
+    chat_settings = "Innstillinger"
+    chat_choose_llm = "Velg språkmodell"
     chat_choose_temp = "Temperatur"
     chat_system_prompt = "Systemprompt"
-    chat_save = "Spara"
-    chat_imput_q = "Vad vill du prata om?"
+    chat_save = "Lagre"
+    chat_imput_q = "Hva vil du snakke om?"
+
 
 elif st.session_state['language'] == "English":
     chat_prompt = "You are a helpful AI assistant. Answer the user’s questions."
