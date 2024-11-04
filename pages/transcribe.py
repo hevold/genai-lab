@@ -29,7 +29,7 @@ styling()
 
 # Check if language is already in session_state, else initialize it with a default value
 if 'language' not in st.session_state:
-    st.session_state['language'] = "Svenska"  # Default language
+    st.session_state['language'] = "Norsk"  # Default language
 
 st.session_state["pwd_on"] = st.secrets.pwd_on
 
@@ -57,7 +57,7 @@ if st.session_state["pwd_on"] == "true":
 
         st.text_input("Lösenord", type="password", on_change=password_entered, key="password")
         if "password_correct" in st.session_state:
-            st.error("😕 Ooops. Fel lösenord.")
+            st.error("😕 Ooops. Feil passord.")
         return False
 
 
@@ -67,15 +67,16 @@ if st.session_state["pwd_on"] == "true":
 ############
 
 # Translation
-if st.session_state['language'] == "Svenska":
+if st.session_state['language'] == "Norsk":
     page_name = "Transkribering"
-    upload_text = "Ladda upp"
-    rec_text = "Spela in"
-    record_text = "Klicka på mikrofonikonen för att spela in"
-    splitting_audio_text = "Delar upp ljudfilen i mindre bitar..."
-    transcribing_text = "Transkriberar alla ljudbitar. Det här kan ta ett tag beroende på lång inspelningen är..."
-    transcription_done_text = "Transkribering klar!"
-    record_stop = "Stoppa inspelning"
+    upload_text = "Last opp"
+    rec_text = "Ta opp"
+    record_text = "Klikk på mikrofonikonet for å ta opp"
+    splitting_audio_text = "Deler opp lydfilen i mindre biter..."
+    transcribing_text = "Transkriberer alle lydbiter. Dette kan ta litt tid avhengig av hvor lang innspillingen er..."
+    transcription_done_text = "Transkribering fullført!"
+    record_stop = "Stopp opptak"
+
 
 elif st.session_state['language'] == "English":
     page_name = "Transcribe"
@@ -105,7 +106,7 @@ st.markdown(f"""#### :material/graphic_eq: {page_name}
 # of Streamlit
 
 if "spoken_language" not in st.session_state: # What language source audio is in
-    st.session_state["spoken_language"] = "Svenska"
+    st.session_state["spoken_language"] = "Norsk"
 if "file_name_converted" not in st.session_state: # Audio file name
     st.session_state["file_name_converted"] = None
 if "gpt_template" not in st.session_state: # Audio file name
@@ -171,7 +172,7 @@ def main():
     with tab1:
         
         uploaded_file = st.file_uploader(
-            "Ladda upp din ljud- eller videofil här",
+            "Last opp din lyd- eller videofil her:",
             type=["mp3", "wav", "flac", "mp4", "m4a", "aifc"],
             help="Max 10GB stora filer", label_visibility="collapsed",
             )
