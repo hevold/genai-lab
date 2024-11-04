@@ -24,7 +24,7 @@ styling()
 
 # Check if language is already in session_state, else initialize it with a default value
 if 'language' not in st.session_state:
-    st.session_state['language'] = "Svenska"  # Default language
+    st.session_state['language'] = "Norsk"  # Default language
 
 
 st.session_state["pwd_on"] = st.secrets.pwd_on
@@ -53,7 +53,7 @@ if st.session_state["pwd_on"] == "true":
 
         st.text_input("Lösenord", type="password", on_change=password_entered, key="password")
         if "password_correct" in st.session_state:
-            st.error("😕 Ooops. Fel lösenord.")
+            st.error("😕 Ooops. Feil passord.")
         return False
 
 
@@ -65,14 +65,15 @@ if st.session_state["pwd_on"] == "true":
 # Translation
 
 if st.session_state['language'] == "Svenska":
-    image_describe = "Beskriv din bild..."
-    image_clear_chat = "Rensa chat"
-    image_hello = "Hej! Hur kan jag hjälpa dig?"
-    image_settings = "Inställningar"
-    image_choose_model = "Välj modell"
-    image_choose_size = "Välj bildstorlek"
-    image_wait = "Ett ögonblick... Ritar och färglägger din bild..."
-    image_sidebar = "Det finns inget minne i chatten, utan du måste beskriva din bild varje gång."
+    image_describe = "Beskriv bildet ditt..."
+    image_clear_chat = "Tøm chat"
+    image_hello = "Hei! Hvordan kan jeg hjelpe deg?"
+    image_settings = "Innstillinger"
+    image_choose_model = "Velg modell"
+    image_choose_size = "Velg bildestørrelse"
+    image_wait = "Et øyeblikk... Tegner og fargelegger bildet ditt..."
+    image_sidebar = "Det er ingen hukommelse i chatten, så du må beskrive bildet ditt hver gang."
+
 
 elif st.session_state['language'] == "English":
     image_describe = "Describe your image..."
