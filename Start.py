@@ -47,7 +47,7 @@ if st.session_state["pwd_on"] == "true":
         if st.session_state.get("password_correct", False):
             return True
 
-        st.text_input("Lösenord", type="password", on_change=password_entered, key="password")
+        st.text_input("Passord", type="password", on_change=password_entered, key="password")
         if "password_correct" in st.session_state:
             st.error("😕 Ooops. Feil passord.")
         return False
