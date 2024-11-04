@@ -67,7 +67,7 @@ menu()
 
 ### MAIN PAGE
 
-st.image("images/logo_main.png", width = 960)
+st.image("images/logo_main.png", width = 400)
 st.markdown("###### ")
 
 st.image("images/header.jpg")
