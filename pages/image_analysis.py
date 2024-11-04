@@ -26,7 +26,7 @@ styling()
 
 # Check if language is already in session_state, else initialize it with a default value
 if 'language' not in st.session_state:
-    st.session_state['language'] = "Svenska"  # Default language
+    st.session_state['language'] = "Norsk"  # Default language
 
 st.session_state["pwd_on"] = st.secrets.pwd_on
 
@@ -54,7 +54,7 @@ if st.session_state["pwd_on"] == "true":
 
         st.text_input("Lösenord", type="password", on_change=password_entered, key="password")
         if "password_correct" in st.session_state:
-            st.error("😕 Ooops. Fel lösenord.")
+            st.error("😕 Ooops. Feil passord.")
         return False
 
 
@@ -65,15 +65,16 @@ if st.session_state["pwd_on"] == "true":
 
 # Translation
 
-if st.session_state['language'] == "Svenska":
-    image_title = "Bildanalys"
-    image_upload_image = "Ladda upp bild"
-    image_allowed_formats = "Tillåtna format: PNG, JPG, JPEG"
-    image_user_input = "Ditt meddelande"
-    image_error_upload_image = "Du måste ladda upp en bild innan du skickar."
-    image_error_upload_text = "Skriv en prompt först."
-    image_analyzing = "Analyserar bilden..."
-    image_send = "Skicka"
+if st.session_state['language'] == "Norsk":
+    image_title = "Bildeanalyse"
+    image_upload_image = "Last opp bilde"
+    image_allowed_formats = "Tillatte formater: PNG, JPG, JPEG"
+    image_user_input = "Din melding"
+    image_error_upload_image = "Du må laste opp et bilde før du sender."
+    image_error_upload_text = "Skriv inn en prompt først."
+    image_analyzing = "Analyserer bildet..."
+    image_send = "Send"
+
     
 elif st.session_state['language'] == "English":
     image_title = "Image Analysis"
