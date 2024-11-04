@@ -21,7 +21,7 @@ styling()
 
 # Check if language is already in session_state, else initialize it with a default value
 if 'language' not in st.session_state:
-    st.session_state['language'] = "Svenska"  # Default language
+    st.session_state['language'] = "Norsk"  # Default language
 
 st.session_state["pwd_on"] = st.secrets.pwd_on
 
@@ -49,7 +49,7 @@ if st.session_state["pwd_on"] == "true":
 
         st.text_input("Lösenord", type="password", on_change=password_entered, key="password")
         if "password_correct" in st.session_state:
-            st.error("😕 Ooops. Fel lösenord.")
+            st.error("😕 Ooops. Feil passord.")
         return False
 
 
@@ -74,10 +74,10 @@ st.image("images/header.jpg")
 st.markdown("###### ")
 
 st.markdown("""
-            __Välkommen till vår labbyta för generativ AI__"""
+            __Velkommen til IJs lab for generativ AI__"""
 )
 st.markdown("""
-            Här i verktygslådan hittar du verktyg för att labba med generativ AI.
+            Her har du noen verktøy du kan teste og bruke i våre kurs.
             """)
     
 st.markdown("# ")
